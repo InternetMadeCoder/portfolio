@@ -48,7 +48,7 @@ const Dock = () => {
 
   return (
     <div 
-      className="fixed bottom-3 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-lg rounded-2xl p-2 flex gap-3 shadow-lg"
+      className="fixed bottom-3 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-lg rounded-2xl p-2 flex gap-3 shadow-lg border border-white/22"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => {
         setIsHovering(false);
