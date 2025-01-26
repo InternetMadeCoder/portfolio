@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Menubar from './components/Menubar'; // Import Navbar component
+import Dock from './components/Dock';
 
 function App() {
   const [currentWallpaper, setCurrentWallpaper] = useState(0);
@@ -32,6 +33,7 @@ function App() {
       }}
     >
       <Menubar /> 
+      <Dock />
     </div>
   );
 }
