@@ -1,23 +1,11 @@
-import { useState, useEffect } from 'react';
 import './App.css';
 import Menubar from './components/Menubar'; // Import Navbar component
 
 function App() {
-  const [currentWallpaper, setCurrentWallpaper] = useState(0);
-  const totalWallpapers = 8; // wallpaper0 through wallpaper7
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentWallpaper((prev) => (prev + 1) % totalWallpapers);
-    }, 5000); // Change wallpaper every 5 seconds
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div
       style={{
-        backgroundImage: `url(/wallpaper/wallpaper${currentWallpaper}.jpg)`,
+        backgroundImage: `url(/images/wallpaper.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
