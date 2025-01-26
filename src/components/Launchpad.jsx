@@ -13,6 +13,7 @@ const Launchpad = ({ isOpen, onClose }) => {
     { name: 'Terminal', icon: './icons/terminal.png' },
     { name: 'Github', icon: './icons/github.png', url: 'https://github.com/InternetMadeCoder' },
     { name: 'About Me', icon: './icons/memoji.png' },
+    { name: 'Resume', icon: './icons/resume.png', url: 'https://drive.google.com/file/d/1Ifq50CnqxXsWoXxw09ZxvLDQ9KKFJocs/view?usp=sharing'},
   ];
 
   const filteredApps = apps.filter(app => 

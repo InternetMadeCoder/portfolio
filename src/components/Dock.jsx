@@ -10,11 +10,12 @@ const Dock = () => {
   const icons = [
     { name: 'Finder', src: './icons/finder.png' },
     { name: 'Launchpad', src: './icons/launchpad.png' },
+    { name: 'Terminal', src: './icons/terminal.png' },
     { name: 'Safari', src: './icons/safari.png' },
     { name: 'Projects', src: './icons/projects.png' },
-    { name: 'Terminal', src: './icons/terminal.png' },
     { name: 'Github', src: './icons/github.png', url: 'https://github.com/InternetMadeCoder' },
     { name: 'About Me', src: './icons/memoji.png' },
+    { name: 'Resume', src: './icons/resume.png', url: 'https://drive.google.com/file/d/1Ifq50CnqxXsWoXxw09ZxvLDQ9KKFJocs/view?usp=sharing'},
   ];
 
   const handleIconClick = (icon) => {
