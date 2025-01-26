@@ -1,6 +1,6 @@
 # macOS-themed portfolio
 
-This is a MacOS-themed portfolio website built using React, Vite, and Tailwind CSS. The site mimics the look and feel of the MacOS interface, with a custom navigation bar, desktop-like wallpaper carousel, and interactive elements. It's a fun and sleek portfolio to showcase projects and skills.
+A sleek and modern portfolio designed with a MacOS theme. Built using React, Vite, and Tailwind CSS, this portfolio showcases my skills, projects, and experience.
 
 ## Features
 
