@@ -3,6 +3,7 @@ import './App.css';
 import Menubar from './components/Menubar'; // Import Navbar component
 import Dock from './components/Dock';
 import TimeWidget from './components/TimeWidget';
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
   const [currentWallpaper, setCurrentWallpaper] = useState(0);
@@ -35,6 +36,7 @@ function App() {
     >
       <Menubar /> 
       <TimeWidget />
+      <MusicPlayer />
       <Dock />
     </div>
   );
