@@ -29,7 +29,7 @@ const TimeWidget = () => {
   };
 
   return (
-    <div className="fixed left-8 top-14 p-6 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 text-white shadow-2xl min-w-[200px] hover:bg-white/15 transition-all duration-300">
+    <div className="fixed left-8 top-14 p-5 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 text-white shadow-2xl min-w-[350px] hover:bg-white/15 transition-all duration-300">
       <div className="text-5xl font-light tracking-tight mb-2">
         {formatTime(currentTime)}
       </div>
