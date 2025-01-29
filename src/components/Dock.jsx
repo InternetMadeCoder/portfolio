@@ -15,7 +15,7 @@ const Dock = () => {
     { name: 'Projects', src: './icons/projects.png' },
     { name: 'Github', src: './icons/github.png', url: 'https://github.com/InternetMadeCoder' },
     { name: 'About Me', src: './icons/memoji.png' },
-    { name: 'Resume', src: './icons/resume.png', url: 'https://drive.google.com/file/d/1Ifq50CnqxXsWoXxw09ZxvLDQ9KKFJocs/view?usp=sharing'},
+    { name: 'Resume', src: './icons/resume.png', url: 'https://drive.google.com/file/d/1oYdaP69jWgwFlcdqdlypLRLEZMeoVgtc/view?usp=sharing'},
   ];
 
   const handleIconClick = (icon) => {
