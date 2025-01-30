@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-const Launchpad = ({ isOpen, onClose }) => {
+const Launchpad = ({ isOpen, onClose, onProjectsClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isInputFocused, setIsInputFocused] = useState(false);
   const launchpadRef = useRef();
@@ -23,6 +23,8 @@ const Launchpad = ({ isOpen, onClose }) => {
   const handleAppClick = (app) => {
     if (app.url) {
       window.open(app.url, '_blank');
+    } else if (app.name === 'Projects') {
+      onProjectsClick();
     }
     onClose(); // Close Launchpad after clicking
   };

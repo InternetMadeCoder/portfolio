@@ -4,10 +4,13 @@ import Menubar from './components/Menubar'; // Import Navbar component
 import Dock from './components/Dock';
 import TimeWidget from './components/TimeWidget';
 import MusicPlayer from './components/MusicPlayer';
+import ProjectWindow from './components/ProjectWindow';
 
 function App() {
   const [currentWallpaper, setCurrentWallpaper] = useState(0);
   const totalWallpapers = 8; // wallpaper0 through wallpaper7
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  const [isProjectsMinimized, setIsProjectsMinimized] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -16,6 +19,19 @@ function App() {
 
     return () => clearInterval(timer);
   }, []);
+
+  const handleProjectsClick = () => {
+    if (isProjectsOpen) {
+      // If window is minimized, restore it
+      if (isProjectsMinimized) {
+        setIsProjectsMinimized(false);
+      }
+    } else {
+      // Open new window
+      setIsProjectsOpen(true);
+      setIsProjectsMinimized(false);
+    }
+  };
 
   return (
     <div
@@ -37,7 +53,20 @@ function App() {
       <Menubar /> 
       <TimeWidget />
       <MusicPlayer />
-      <Dock />
+      <ProjectWindow 
+        isOpen={isProjectsOpen} 
+        isMinimized={isProjectsMinimized}
+        onClose={() => {
+          setIsProjectsOpen(false);
+          setIsProjectsMinimized(false);
+        }}
+        onMinimize={setIsProjectsMinimized}
+      />
+      <Dock 
+        activeWindows={isProjectsOpen ? ['Projects'] : []}
+        activeMinimized={isProjectsMinimized ? ['Projects'] : []}
+        onProjectsClick={handleProjectsClick}
+      />
     </div>
   );
 }

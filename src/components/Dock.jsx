@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Launchpad from './Launchpad';
 
-const Dock = () => {
+const Dock = ({ activeWindows = [], activeMinimized = [], onProjectsClick }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [hoveredIcon, setHoveredIcon] = useState(null);
@@ -19,12 +19,12 @@ const Dock = () => {
   ];
 
   const handleIconClick = (icon) => {
-    console.log('Icon clicked:', icon.name); // Debug log
     if (icon.url) {
       window.open(icon.url, '_blank');
     } else if (icon.name === 'Launchpad') {
-      console.log('Opening Launchpad'); // Debug log
-      setIsLaunchpadOpen(prev => !prev); // Toggle Launchpad
+      setIsLaunchpadOpen(prev => !prev);
+    } else if (icon.name === 'Projects') {
+      onProjectsClick();
     }
   };
 
@@ -102,6 +102,13 @@ const Dock = () => {
               onError={handleImageError}
               className="w-full h-full object-contain"
             />
+            {activeWindows.includes(icon.name) && (
+              <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full transition-all duration-200 ${
+                activeMinimized.includes(icon.name) 
+                  ? 'bg-white/30' 
+                  : 'bg-white/60'
+              }`} />
+            )}
           </div>
         ))}
       </div>
