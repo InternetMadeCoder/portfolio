@@ -61,13 +61,14 @@ const Dock = ({ activeWindows = [], activeMinimized = [], onProjectsClick }) => 
 
   return (
     <>
-      {isLaunchpadOpen && ( // Add conditional check
+      {isLaunchpadOpen && (
         <Launchpad 
           isOpen={isLaunchpadOpen} 
-          onClose={() => {
-            console.log('Closing Launchpad'); // Debug log
+          onClose={() => setIsLaunchpadOpen(false)}
+          onProjectsClick={() => {
+            onProjectsClick();
             setIsLaunchpadOpen(false);
-          }} 
+          }}
         />
       )}
       <div 
